@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f7f8;
+  color: #1a1a1a;
+  padding: 40px 20px;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 24px 16px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 16px 12px;
+  }
+}
+
+.product-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+}
+@media (max-width: 768px) {
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+}
+.product-card__media {
+  position: relative;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+@media (max-width: 768px) {
+  .product-card__media {
+    padding: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .product-card__media {
+    padding: 20px;
+  }
+}
+.product-card__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.product-card__badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: rgb(255, 255, 224);
+  color: #1a1a1a;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+@media (max-width: 480px) {
+  .product-card__badge {
+    top: 16px;
+    left: 16px;
+  }
+}
+.product-card__body {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .product-card__body {
+    padding: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .product-card__body {
+    padding: 20px;
+    gap: 14px;
+  }
+}
+.product-card__category {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+.product-card__title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .product-card__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .product-card__title {
+    font-size: 20px;
+  }
+}
+.product-card__sku {
+  margin: 0;
+  font-size: 13px;
+  color: #7a7a7a;
+}
+.product-card__sku span {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+.product-card__packaging {
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.product-card__packaging-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.product-card__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.product-card__price-current {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e63946;
+}
+@media (max-width: 480px) {
+  .product-card__price-current {
+    font-size: 26px;
+  }
+}
+.product-card__price-old {
+  font-size: 18px;
+  color: #7a7a7a;
+  text-decoration: line-through;
+}
+.product-card__price-old[hidden] {
+  display: none;
+}
+.product-card__btn {
+  margin-top: 4px;
+  padding: 16px 24px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #1a1a1a;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.product-card__btn:hover {
+  background: #333;
+}
+.product-card__btn:active {
+  transform: scale(0.98);
+}
+.product-card__btn:focus-visible {
+  outline: 2px solid #e63946;
+  outline-offset: 3px;
+}
+.product-card__description {
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+.product-card__description-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.product-card__description-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.packaging-option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.packaging-option input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+.packaging-option input:focus-visible + .packaging-option__label {
+  outline: 2px solid #e63946;
+  outline-offset: 2px;
+}
+.packaging-option input:checked + .packaging-option__label {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+.packaging-option__label {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  background: #f5f5f5;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+.packaging-option__label:hover {
+  border-color: #cfcfcf;
+}
+
+/*# sourceMappingURL=styles.css.map */

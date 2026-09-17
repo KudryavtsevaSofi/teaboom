@@ -1,0 +1,71 @@
+# Зависимости
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Логи
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Переменные окружения
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Кэш сборщиков и Sass
+.sass-cache/
+*.css.map
+*.scss.map
+.cache/
+.parcel-cache/
+
+# Скомпилированный CSS
+dist/
+build/
+public/css/
+
+# Редакторы и IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ОС
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Временные файлы
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Coverage / тесты
+coverage/
+.nyc_output/
+
+# Дистрибутивы
+dist/
+build/
+out/

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <article class="product-card" aria-labelledby="product-title">
+      <div class="product-card__media">
+        <img id="product-image" class="product-card__image" src="" alt="" />
+        <span class="product-card__badge" id="product-badge" hidden></span>
+      </div>
+
+      <div class="product-card__body">
+        <p class="product-card__category" id="product-category"></p>
+        <h1 class="product-card__title" id="product-title"></h1>
+        <p class="product-card__sku">Артикул: <span id="product-sku"></span></p>
+
+        <fieldset class="product-card__packaging">
+          <div
+            class="product-card__packaging-list"
+            id="packaging-list"
+            role="radiogroup"
+          ></div>
+        </fieldset>
+
+        <div class="product-card__prices">
+          <span class="product-card__price-current" id="product-price"></span>
+          <span class="product-card__price-old" id="product-old-price"></span>
+        </div>
+
+        <button class="product-card__btn" type="button" id="add-to-cart">
+          В корзину
+        </button>
+
+        <section class="product-card__description">
+          <h2 class="product-card__description-title">Описание</h2>
+          <p
+            class="product-card__description-text"
+            id="product-description"
+          ></p>
+        </section>
+      </div>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>
